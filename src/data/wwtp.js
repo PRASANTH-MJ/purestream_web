@@ -75,7 +75,7 @@ export const PROCESS_STAGES = [
   { name: 'Oil & Grease Trap', detail: 'Floating oil and fat are separated before they foul downstream stages.' },
   { name: 'Settling Tank', detail: 'Suspended solids settle as primary sludge.' },
   { name: 'Equalisation Tank', detail: 'Evens out flow and load swings across the day.' },
-  { name: 'SBBR Reactor', detail: 'Biofilm and batch cycles break down organic load (BOD/COD).' },
+  { name: 'SBBR Reactor', detail: 'Hybrid SBR + MBBR biofilm stages break down organic load (BOD/COD) and absorb shock loads.' },
   { name: 'Pressure Sand Filter', detail: 'Polishes out remaining fine suspended solids.' },
   { name: 'Activated Carbon Filter', detail: 'Removes colour, odour and residual organics.' },
   { name: 'Chlorine Dosing', detail: 'Disinfects water for safe discharge or reuse.' },
@@ -95,43 +95,58 @@ export const CASE_STUDIES = [
     slug: 'merge-mechano',
     client: 'Merge Mechano',
     location: 'Varavoor, Thrissur',
-    industry: 'Powder coating & metal finishing',
-    capacity: '250 LPH Industrial ETP',
+    industry: 'Industrial powder coating & metal finishing',
+    capacity: 'Advanced Electrocoagulation (EC) System · 250 LPH',
     challenge:
       'Raw-material washing used caustic soda and oxalic acid. The projected influent TDS was 180 PPM, but on site it measured 850 PPM at pH 3.0. Standard chemical dosing would have created hazardous sludge and failed KSPCB norms.',
     solution: [
-      'Electrocoagulation (ECR) reactor to neutralise acids and coagulate dissolved ions without heavy lime dosing',
+      'Electrocoagulation reactor that uses electric current instead of recurring chemical additives to neutralise acids and coagulate dissolved ions',
       'Automatic pH stabilisation from 3.0 to neutral',
       'Multi-stage sand + activated-carbon filtration',
       'High-rejection RO sized for the 850 PPM spike',
     ],
     result:
-      'The treated water is recycled back into the washing process, which cuts fresh-water cost. The factory stays within KSPCB norms, and the ECR + RO footprint is smaller than a traditional clarifier.',
-    highlight: '4.7× higher TDS than projected, and still handled',
+      'Chemical-free treatment cuts daily operating and sludge-handling costs. The treated water is recycled back into the washing process, and the factory stays within KSPCB norms with a footprint smaller than a traditional clarifier.',
+    highlight: 'Pioneering chemical-free electrocoagulation in Kerala',
   },
   {
     slug: 'pickle-factory',
-    client: 'Pickle Factory STP',
+    client: 'Commercial Pickle Manufacturing Facility',
     location: 'Palakkad',
-    industry: 'Food processing',
-    capacity: 'Sequential Batch Reactor STP',
+    industry: 'Food processing & high-TDS effluent',
+    capacity: 'Hybrid SBBR (SBR + MBBR)',
     challenge:
-      'A food-processing unit needed effective treatment without high power bills or a full-time operator.',
+      'Complex food-processing wastewater with shock organic loads and high salinity, which had to be treated without high power bills or a full-time operator.',
     solution: [
+      'Hybrid SBBR: Sequencing Batch Reactor (SBR) combined with Moving Bed Biofilm Reactor (MBBR) biological stages',
       'Mud trap → oil & grease trap → settling → equalisation → reactor chamber',
       'Pressure sand filter → activated carbon filter → chlorine dosing',
-      'Airlift pumping technology',
-      'Semi-automatic operation',
+      'Airlift pumping and semi-automatic operation',
     ],
-    result: 'The full plant runs on just 160 W of power with minimal hands-on operation.',
-    highlight: 'Runs on 160 W',
+    result: 'The plant absorbs shock loads and salinity while running on just 160 W of power with minimal hands-on operation.',
+    highlight: 'Handles shock loads on just 160 W',
+  },
+  {
+    slug: 'shaju-car-wash',
+    client: 'Shaju Car Wash Center',
+    location: null,
+    industry: 'Automotive & wash centre',
+    capacity: 'Chemical-Based Effluent Treatment Plant (ETP)',
+    challenge: 'Automotive wash runoff heavy with mud, oil and grease needed treatment to a standard fit for reuse.',
+    solution: [
+      'High-efficiency chemical precipitation',
+      'Oil and grease separation',
+      'Multi-stage filtration',
+    ],
+    result: 'Clean, treated water is reused at the wash centre.',
+    highlight: 'Wash water treated for reuse',
   },
   {
     slug: 'ramans-steam-wash',
     client: "Raman's Steam Wash Station",
     location: 'Chazhur, Thrissur',
     industry: 'Car wash / service station',
-    capacity: '2 KLD ETP',
+    capacity: '2 KLD Chemical ETP',
     challenge:
       'A small service station needed proper treatment for mud, oil and detergent wash water, sized for its real volume.',
     solution: [
@@ -143,6 +158,44 @@ export const CASE_STUDIES = [
     highlight: 'Complete ETP at 2 KLD',
   },
 ];
+
+// Client-supplied copy (2026-11-06).
+export const TECHNOLOGIES = [
+  {
+    icon: 'Car',
+    name: 'Chemical-Based ETP',
+    for: 'Automotive & wash centres',
+    detail: 'Chemical precipitation and filtration for wash runoff, with oil and grease separation and clean water reuse.',
+  },
+  {
+    icon: 'Zap',
+    name: 'Electrocoagulation (EC)',
+    for: 'Powder coating & metal finishing',
+    detail: 'Uses electric current instead of recurring chemical additives, cutting daily operating and sludge-handling costs.',
+  },
+  {
+    icon: 'Recycle',
+    name: 'Hybrid SBBR (SBR + MBBR)',
+    for: 'Food processing & high-load effluent',
+    detail: 'Sequencing Batch Reactor plus Moving Bed Biofilm Reactor stages, built for shock organic loads and high salinity.',
+  },
+];
+
+export const WHY_CHOOSE = {
+  automation: {
+    title: 'Intelligent automation',
+    body: 'Every plant has a semi-automatic or fully automated control system. With manual intervention kept to a minimum, output quality stays consistent, human error is avoided and the system runs with near-zero failures.',
+  },
+  tco: {
+    title: 'Lowest total cost of ownership',
+    body: 'Advanced engineering and automated components need a slightly higher initial investment (CapEx), but our plants deliver industry-leading efficiency in daily operation (OpEx).',
+    points: [
+      { title: 'Lower operating expenses', detail: 'Minimal chemical use and optimised power consumption.' },
+      { title: 'Virtually maintenance-free', detail: 'Much lower risk of mechanical breakdown and downtime.' },
+      { title: 'Long-term ROI', detail: 'Counting setup and running costs together over the plant’s life, our systems deliver the lowest net expenditure.' },
+    ],
+  },
+};
 
 export const ENGAGEMENT_STEPS = [
   {
@@ -196,7 +249,11 @@ export const FAQS = [
   },
   {
     q: 'Our effluent is unusual. Can you still treat it?',
-    a: 'Yes. That is why we test on site first. In our Merge Mechano project the effluent measured 850 PPM TDS at pH 3.0, far worse than projected, and we engineered an ECR + RO plant around it.',
+    a: 'Yes. That is why we test on site first and match the technology to the stream: chemical ETP, electrocoagulation or hybrid SBBR. In our Merge Mechano project the effluent measured 850 PPM TDS at pH 3.0, far worse than projected, and we engineered an electrocoagulation + RO plant around it.',
+  },
+  {
+    q: 'Are your plants automated?',
+    a: 'Yes. Every plant is semi-automatic or fully automated, which keeps manual work to a minimum and output quality consistent.',
   },
 ];
 

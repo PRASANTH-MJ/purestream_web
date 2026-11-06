@@ -1,6 +1,6 @@
 import PageHeader from '../components/PageHeader';
 import QuoteBanner from '../components/QuoteBanner';
-import { SolutionsGrid, ProcessSection, HowWeWork, Faq } from '../components/wwtp/Sections';
+import { SolutionsGrid, ProcessSection, HowWeWork, Faq, TechnologySection, WhyChoose } from '../components/wwtp/Sections';
 
 export default function SolutionsPage() {
   return (
@@ -11,6 +11,8 @@ export default function SolutionsPage() {
         subtitle="ETPs, STPs, modular packaged plants and water recycling systems from 2 to 100 KLD, designed to meet PCB norms and reuse standards."
       />
       <SolutionsGrid detailed />
+      <TechnologySection />
+      <WhyChoose />
       <ProcessSection />
       <HowWeWork />
       <Faq />

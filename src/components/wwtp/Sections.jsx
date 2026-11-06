@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ChevronDown, HardHat, Wrench, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown, HardHat, Wrench, MapPin, Cpu, TrendingDown } from 'lucide-react';
 import { ICONS } from './icons';
 import {
   SOLUTIONS,
@@ -11,6 +11,8 @@ import {
   ENGAGEMENT_STEPS,
   SCOPE,
   FAQS,
+  TECHNOLOGIES,
+  WHY_CHOOSE,
 } from '../../data/wwtp';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -182,8 +184,8 @@ export function CaseStudyCard({ cs, expanded = false }) {
       </span>
       <h3 className="mt-4 font-display text-xl font-extrabold text-ink-900 dark:text-white">{cs.client}</h3>
       <p className="mt-1 flex items-center gap-1.5 text-sm font-medium text-slate-500 dark:text-slate-400">
-        <MapPin className="h-3.5 w-3.5" />
-        {cs.location} · {cs.industry}
+        <MapPin className="h-3.5 w-3.5 shrink-0" />
+        {[cs.location, cs.industry].filter(Boolean).join(' · ')}
       </p>
       <p className="mt-1 text-sm font-bold text-brand-700 dark:text-brand-400">{cs.capacity}</p>
 
@@ -229,12 +231,17 @@ export function CaseStudies() {
         <SectionHeading
           eyebrow="Proven on site"
           title="Real plants, real effluent"
-          intro="From a 2 KLD car wash to a high-TDS metal finishing line, these plants are running today in Kerala."
+          intro="From car wash centres to powder coating lines and food processing, these plants are running today in Kerala."
         />
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {CASE_STUDIES.map((cs) => (
+          {CASE_STUDIES.slice(0, 3).map((cs) => (
             <CaseStudyCard key={cs.slug} cs={cs} />
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link to="/projects" className="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 dark:text-brand-400">
+            View all projects <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
@@ -332,6 +339,83 @@ export function Faq() {
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TechnologySection() {
+  return (
+    <section className="border-t border-slate-100 bg-white py-20 dark:border-white/10 transition-colors duration-300 sm:py-24 dark:bg-ink-900">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Our technology"
+          title="Tailored engineering for every effluent stream"
+          intro="We do not offer one-size-fits-all plants. Every site gets the treatment technology it needs: chemical ETPs for automotive centres, pioneering electrocoagulation for powder coating, and hybrid SBBR biological systems for high-load food industries. Fully automated and built for the lowest lifecycle cost, our plants protect both your compliance and your bottom line."
+        />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {TECHNOLOGIES.map((t) => {
+            const Icon = ICONS[t.icon];
+            return (
+              <motion.div key={t.name} {...reveal} className="rounded-3xl border border-slate-100 p-7 dark:border-white/10 dark:bg-ink-800">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-eco-50 text-eco-600 dark:bg-eco-500/10 dark:text-eco-400">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <p className="mt-5 text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">{t.for}</p>
+                <h3 className="mt-1 font-display text-xl font-extrabold text-ink-900 dark:text-white">{t.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{t.detail}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function WhyChoose() {
+  const { automation, tco } = WHY_CHOOSE;
+  return (
+    <section className="bg-ink-900 py-20 text-white sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-bold uppercase tracking-widest text-eco-300">Why choose our systems</p>
+          <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Pay a little more up front. Spend far less every day after.
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-5">
+          <motion.div {...reveal} className="rounded-3xl bg-white/5 p-7 ring-1 ring-white/10 lg:col-span-2">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/15 text-brand-300">
+              <Cpu className="h-6 w-6" />
+            </span>
+            <h3 className="mt-5 font-display text-xl font-extrabold">{automation.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">{automation.body}</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {['Semi-automatic', 'Fully automated'].map((x) => (
+                <span key={x} className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-slate-200">{x}</span>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div {...reveal} className="rounded-3xl bg-gradient-to-br from-brand-700 to-brand-900 p-7 ring-1 ring-white/10 lg:col-span-3">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-eco-500/20 text-eco-300">
+              <TrendingDown className="h-6 w-6" />
+            </span>
+            <h3 className="mt-5 font-display text-xl font-extrabold">{tco.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-brand-100/90">{tco.body}</p>
+            <ul className="mt-6 grid gap-4 sm:grid-cols-3">
+              {tco.points.map((pt) => (
+                <li key={pt.title} className="rounded-2xl bg-white/10 p-4">
+                  <p className="flex items-center gap-2 font-display text-sm font-bold">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-eco-300" />
+                    {pt.title}
+                  </p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-brand-100/85">{pt.detail}</p>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>

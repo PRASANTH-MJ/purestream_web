@@ -9,6 +9,8 @@ import {
   CaseStudies,
   HowWeWork,
   Faq,
+  TechnologySection,
+  WhyChoose,
 } from '../components/wwtp/Sections';
 
 export default function Home() {
@@ -17,9 +19,11 @@ export default function Home() {
       <Hero />
       <PerksBanner />
       <SolutionsGrid />
+      <TechnologySection />
       <ProcessSection />
       <IndustriesGrid />
       <CaseStudies />
+      <WhyChoose />
       <HowWeWork />
       <AboutUs />
       <Faq />
