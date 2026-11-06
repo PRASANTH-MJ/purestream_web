@@ -1,6 +1,6 @@
 import PageHeader from '../components/PageHeader';
 import QuoteBanner from '../components/QuoteBanner';
-import { CaseStudyCard } from '../components/wwtp/Sections';
+import { CaseStudyCard, VideoTestimonials } from '../components/wwtp/Sections';
 import { CASE_STUDIES } from '../data/wwtp';
 
 export default function ProjectsPage() {
@@ -18,6 +18,7 @@ export default function ProjectsPage() {
           ))}
         </div>
       </section>
+      <VideoTestimonials />
       <QuoteBanner />
     </>
   );

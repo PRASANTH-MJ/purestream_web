@@ -11,6 +11,7 @@ import {
   Faq,
   TechnologySection,
   WhyChoose,
+  VideoTestimonials,
 } from '../components/wwtp/Sections';
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <ProcessSection />
       <IndustriesGrid />
       <CaseStudies />
+      <VideoTestimonials />
       <WhyChoose />
       <HowWeWork />
       <AboutUs />

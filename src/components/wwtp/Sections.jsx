@@ -15,6 +15,8 @@ import {
   TECHNOLOGIES,
   WHY_CHOOSE,
   youtubeId,
+  TESTIMONIAL_VIDEOS,
+  CONTACT,
 } from '../../data/wwtp';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -427,6 +429,69 @@ export function WhyChoose() {
               ))}
             </ul>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function VideoTestimonials() {
+  const { featured, shorts } = TESTIMONIAL_VIDEOS;
+  return (
+    <section className="border-t border-slate-100 bg-white py-20 dark:border-white/10 transition-colors duration-300 sm:py-24 dark:bg-ink-900">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Client testimonials"
+          title="Hear it from our clients"
+          intro="Real customers and real sites, filmed on location. Press play to watch here."
+        />
+
+        <motion.div {...reveal} className="mt-14 grid items-center gap-8 rounded-3xl bg-slate-50 p-5 sm:p-8 lg:grid-cols-5 dark:bg-ink-800">
+          <div className="lg:col-span-3">
+            <ProjectVideo
+              url={featured.url}
+              start={featured.start}
+              title={featured.client}
+              label="Client feedback"
+              className=""
+            />
+          </div>
+          <div className="lg:col-span-2">
+            <span className="rounded-full bg-eco-50 px-3 py-1 text-xs font-bold text-eco-700 dark:bg-eco-500/10 dark:text-eco-300">
+              {featured.context}
+            </span>
+            <p className="mt-4 font-display text-2xl font-extrabold text-ink-900 dark:text-white">{featured.client}</p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{featured.caption}</p>
+            <Link
+              to="/projects#pickle-factory"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 dark:text-brand-400"
+            >
+              Read the case study <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </motion.div>
+
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {shorts.map((v) => (
+            <motion.figure key={v.url} {...reveal}>
+              <ProjectVideo url={v.url} short title={`${v.product}: ${v.title}`} label="▶ Play" className="" />
+              <figcaption className="mt-3">
+                <p className="font-display text-sm font-bold text-ink-900 dark:text-white">{v.title}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">{v.product}</p>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href={CONTACT.youtube}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 px-6 py-3 text-sm font-bold text-slate-700 hover:border-red-300 hover:text-red-700 dark:border-white/15 dark:text-slate-200"
+          >
+            <PlayCircle className="h-4 w-4" /> More videos on our YouTube channel
+          </a>
         </div>
       </div>
     </section>

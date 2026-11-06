@@ -314,3 +314,21 @@ export function youtubeId(url) {
   const m = url.match(/(?:youtu\.be\/|v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/);
   return m ? m[1] : null;
 }
+
+// Client feedback videos from youtube.com/@waterconsultantpalakkad.
+// `start` is in seconds. `short: true` renders a vertical 9:16 frame.
+export const TESTIMONIAL_VIDEOS = {
+  featured: {
+    url: 'https://www.youtube.com/watch?v=np-ix6olKp8',
+    start: 280,
+    client: 'Pickle manufacturing facility, Palakkad',
+    context: 'Waste water treatment · Hybrid SBBR plant',
+    caption: 'The client talks about the plant after the odour complaints were resolved.',
+  },
+  shorts: [
+    { url: 'https://www.youtube.com/shorts/J9C4i9oIAlA', title: 'Customer feedback', product: 'Iron remover' },
+    { url: 'https://www.youtube.com/shorts/I3fzWQqr0w4', title: 'Review after 1 year', product: 'Water softener' },
+    { url: 'https://www.youtube.com/shorts/S2vjsggV3W4', title: 'Customer review', product: 'Pure Stream Digital purifier' },
+    { url: 'https://www.youtube.com/shorts/eGizAkNAydI', title: 'Customer feedback', product: 'Iron remover' },
+  ],
+};

@@ -4,13 +4,13 @@ import { youtubeId } from '../../data/wwtp';
 
 // Shows the YouTube thumbnail and loads the player only on click,
 // so pages stay fast and no YouTube cookies are set until then.
-export default function ProjectVideo({ url, title, embeddable = true }) {
+export default function ProjectVideo({ url, title, embeddable = true, short = false, start = 0, label = 'Watch the plant in action', className = 'mt-6' }) {
   const [playing, setPlaying] = useState(false);
   const id = youtubeId(url);
   if (!id) return null;
 
   return (
-    <div className="relative mt-6 aspect-video overflow-hidden rounded-2xl bg-ink-900">
+    <div className={`relative ${className} ${short ? 'aspect-[9/16]' : 'aspect-video'} overflow-hidden rounded-2xl bg-ink-900`}>
       {!embeddable ? (
         <a
           href={url}
@@ -37,7 +37,7 @@ export default function ProjectVideo({ url, title, embeddable = true }) {
       ) : playing ? (
         <iframe
           className="absolute inset-0 h-full w-full"
-          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0${start ? `&start=${start}` : ''}`}
           title={`${title}: project video`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -61,7 +61,7 @@ export default function ProjectVideo({ url, title, embeddable = true }) {
             </span>
           </span>
           <span className="absolute bottom-3 left-3 rounded-full bg-black/70 px-3 py-1 text-xs font-bold text-white">
-            Watch the plant in action
+            {label}
           </span>
         </button>
       )}
