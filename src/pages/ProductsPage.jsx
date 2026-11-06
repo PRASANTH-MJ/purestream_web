@@ -5,8 +5,8 @@ export default function ProductsPage() {
   return (
     <>
       <PageHeader
-        title="Our Products"
-        subtitle="Domestic & industrial RO/UV purifiers, whole-house filtration, booster pumps, kitchen appliances and spares — the complete PureStream range."
+        title="Water Purifiers & Filtration"
+        subtitle="Alongside our waste water treatment plants, we supply industrial RO, whole-house filtration and drinking-water purifiers for factories, offices and homes."
       />
       <ProductGrid />
     </>

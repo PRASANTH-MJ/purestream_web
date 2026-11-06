@@ -18,6 +18,14 @@
   --color-brand-900: #0b2f63;
   --color-brand-950: #081d40;
 
+  --color-eco-50: #ecfdf7;
+  --color-eco-100: #d1fae9;
+  --color-eco-300: #6ee7bf;
+  --color-eco-400: #34d39f;
+  --color-eco-500: #10b981;
+  --color-eco-600: #059669;
+  --color-eco-700: #047857;
+
   --color-ink-900: #0b1220;
   --color-ink-800: #131c2e;
 }
@@ -57,4 +65,16 @@ body {
 
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
+}
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -24; }
+}
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: flow-dash 1.2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-line { animation: none; }
+  html { scroll-behavior: auto; }
 }

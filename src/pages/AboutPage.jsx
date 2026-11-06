@@ -13,13 +13,13 @@ const PILLARS = [
     icon: Wallet,
     title: 'Value for Money',
     description:
-      'PureStream is your one-stop destination for a cost-effective RO water purifier for your home and office.',
+      'Plants are sized to your measured load, with no oversizing and low running cost. Civil works stay in your hands and are built to our spec.',
   },
   {
     icon: Headphones,
     title: 'After Sales Services',
     description:
-      'Our goal is not just to sell water purifiers — we provide timely after-sales services and solutions.',
+      'We commission every plant and support it with AMC, so it keeps meeting norms long after installation.',
   },
   {
     icon: Users,
@@ -62,7 +62,7 @@ const TESTIMONIALS = [
 export default function AboutPage() {
   return (
     <>
-      <PageHeader title="About Us" subtitle="Purity & Immunity in Everydrop." />
+      <PageHeader title="About Us" subtitle="Industrial waste water treatment, water recycling and purification from Palakkad, Kerala." />
 
       <AboutUs />
 

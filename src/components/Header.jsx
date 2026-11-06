@@ -7,11 +7,13 @@ import { useQuoteModal } from '../context/QuoteModalContext';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'Product', to: '/products' },
+  { label: 'Solutions', to: '/solutions' },
+  { label: 'Industries', to: '/industries' },
+  { label: 'Projects', to: '/projects' },
   { label: 'Services', to: '/services' },
-  { label: 'Maintenance', to: '/maintenance' },
-  { label: 'About Us', to: '/about-us' },
-  { label: 'Contact Us', to: '/contact-us' },
+  { label: 'Water Purifiers', to: '/products' },
+  { label: 'About', to: '/about-us' },
+  { label: 'Contact', to: '/contact-us' },
 ];
 
 const navLinkClass = ({ isActive }) =>
@@ -30,7 +32,7 @@ export default function Header() {
           <PureStreamLogo textClassName="text-ink-900 dark:text-white" />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 xl:gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.label} to={link.to} end={link.to === '/'} className={navLinkClass}>
               {link.label}
@@ -45,7 +47,7 @@ export default function Header() {
             onClick={openQuoteModal}
             className="inline-flex items-center rounded-full bg-brand-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-600/25 transition-all hover:scale-[1.03] hover:bg-brand-700 hover:shadow-brand-600/40 active:scale-95"
           >
-            Get A Quote
+            Site Assessment
           </button>
         </div>
 
@@ -90,7 +92,7 @@ export default function Header() {
               }}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-bold text-white shadow-md transition-transform active:scale-95"
             >
-              Get A Quote
+              Book a Site Assessment
             </button>
           </nav>
         </div>

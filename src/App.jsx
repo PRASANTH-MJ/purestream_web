@@ -12,6 +12,9 @@ import Services from './pages/Services';
 import Maintenance from './pages/Maintenance';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import SolutionsPage from './pages/SolutionsPage';
+import IndustriesPage from './pages/IndustriesPage';
+import ProjectsPage from './pages/ProjectsPage';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/solutions" element={<SolutionsPage />} />
+              <Route path="/industries" element={<IndustriesPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/product/:slug" element={<ProductDetail />} />
               <Route path="/services" element={<Services />} />

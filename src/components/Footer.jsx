@@ -6,20 +6,24 @@ import { useQuoteModal } from '../context/QuoteModalContext';
 
 const LINK_COLUMNS = [
   {
-    title: 'Company',
+    title: 'Waste Water',
     links: [
-      { label: 'Home', to: '/' },
-      { label: 'Product', to: '/products' },
-      { label: 'About Us', to: '/about-us' },
-      { label: 'Contact Us', to: '/contact-us' },
+      { label: 'Effluent Treatment (ETP)', to: '/solutions#etp' },
+      { label: 'Sewage Treatment (STP)', to: '/solutions#stp' },
+      { label: 'Modular Plants', to: '/solutions#modular' },
+      { label: 'Water Recycling & RO', to: '/solutions#reuse' },
+      { label: 'Projects', to: '/projects' },
     ],
   },
   {
-    title: 'Support',
+    title: 'Company',
     links: [
-      { label: 'Services', to: '/services' },
-      { label: 'Maintenance', to: '/maintenance' },
-      { label: 'Get A Quote', to: null },
+      { label: 'Industries', to: '/industries' },
+      { label: 'Services & AMC', to: '/services' },
+      { label: 'Water Purifiers', to: '/products' },
+      { label: 'About Us', to: '/about-us' },
+      { label: 'Contact Us', to: '/contact-us' },
+      { label: 'Book a Site Assessment', to: null },
     ],
   },
 ];
@@ -42,8 +46,8 @@ export default function Footer() {
               <PureStreamLogo textClassName="text-white" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-              RO &amp; UV purifiers, whole-house filtration, industrial RO, kitchen appliances
-              and more — all from PureStream. Purity &amp; Immunity in Everydrop.
+              Industrial effluent and sewage treatment plants from 2 to 100 KLD. SBBR technology,
+              designed for PCB norms and water reuse. SV Trades, Town Bus Stand, Palakkad, Kerala – 678014.
             </p>
 
             <div className="mt-6 space-y-3 text-sm text-slate-400">
@@ -112,7 +116,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-sm text-slate-500 sm:flex-row">
           <p>© {new Date().getFullYear()} PureStream. All rights reserved.</p>
-          <p>Purity &amp; Immunity in Everydrop.</p>
+          <p>Treat it right. Reuse it.</p>
         </div>
       </div>
     </footer>
