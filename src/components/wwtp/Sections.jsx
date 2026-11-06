@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, ChevronDown, HardHat, Wrench, MapPin, Cpu, TrendingDown } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown, HardHat, Wrench, MapPin, Cpu, TrendingDown, PlayCircle } from 'lucide-react';
 import { ICONS } from './icons';
+import ProjectVideo from './ProjectVideo';
 import {
   SOLUTIONS,
   PROCESS_STAGES,
@@ -13,6 +14,7 @@ import {
   FAQS,
   TECHNOLOGIES,
   WHY_CHOOSE,
+  youtubeId,
 } from '../../data/wwtp';
 import { useQuoteModal } from '../../context/QuoteModalContext';
 
@@ -212,6 +214,15 @@ export function CaseStudyCard({ cs, expanded = false }) {
           <p className="mt-1">{cs.result}</p>
         </div>
       </div>
+      {expanded && <ProjectVideo url={cs.video} title={cs.client} />}
+      {!expanded && youtubeId(cs.video) && (
+        <Link
+          to={`/projects#${cs.slug}`}
+          className="mt-5 inline-flex items-center gap-2 self-start rounded-full bg-red-50 px-4 py-2 text-sm font-bold text-red-700 hover:bg-red-100 dark:bg-red-500/10 dark:text-red-300"
+        >
+          <PlayCircle className="h-4 w-4" /> Watch project video
+        </Link>
+      )}
       {!expanded && (
         <Link
           to={`/projects#${cs.slug}`}

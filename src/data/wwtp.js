@@ -4,6 +4,7 @@
 // or timelines that aren't in that file.
 
 export const CONTACT = {
+  youtube: '', // channel URL, e.g. https://www.youtube.com/@VineethWaterConsultant
   phone: '+91 70124 11523',
   phoneHref: 'tel:+917012411523',
   whatsapp: '917012411523',
@@ -108,6 +109,7 @@ export const CASE_STUDIES = [
     result:
       'Chemical-free treatment cuts daily operating and sludge-handling costs. The treated water is recycled back into the washing process, and the factory stays within KSPCB norms with a footprint smaller than a traditional clarifier.',
     highlight: 'Pioneering chemical-free electrocoagulation in Kerala',
+    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
   },
   {
     slug: 'pickle-factory',
@@ -125,6 +127,7 @@ export const CASE_STUDIES = [
     ],
     result: 'The plant absorbs shock loads and salinity while running on just 160 W of power with minimal hands-on operation.',
     highlight: 'Handles shock loads on just 160 W',
+    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
   },
   {
     slug: 'shaju-car-wash',
@@ -140,6 +143,7 @@ export const CASE_STUDIES = [
     ],
     result: 'Clean, treated water is reused at the wash centre.',
     highlight: 'Wash water treated for reuse',
+    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
   },
   {
     slug: 'ramans-steam-wash',
@@ -156,6 +160,7 @@ export const CASE_STUDIES = [
     ],
     result: 'A complete, compliant treatment train at 2 KLD, the right size for a small commercial site.',
     highlight: 'Complete ETP at 2 KLD',
+    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
   },
 ];
 
@@ -299,4 +304,11 @@ export function buildEnquiryMessage(f) {
   ]
     .filter(Boolean)
     .join('\n');
+}
+
+// Returns the 11-char YouTube video id from any common URL form, or null.
+export function youtubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtu\.be\/|v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/);
+  return m ? m[1] : null;
 }

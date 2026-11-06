@@ -3,6 +3,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from './SocialIcons';
 import PureStreamLogo from './PureStreamLogo';
 import { useQuoteModal } from '../context/QuoteModalContext';
+import { CONTACT } from '../data/wwtp';
 
 const LINK_COLUMNS = [
   {
@@ -31,7 +32,7 @@ const LINK_COLUMNS = [
 const SOCIALS = [
   { icon: FacebookIcon, label: 'Facebook', href: '#' },
   { icon: InstagramIcon, label: 'Instagram', href: '#' },
-  { icon: YoutubeIcon, label: 'YouTube', href: '#' },
+  { icon: YoutubeIcon, label: 'YouTube', href: CONTACT.youtube || '#' },
 ];
 
 export default function Footer() {
