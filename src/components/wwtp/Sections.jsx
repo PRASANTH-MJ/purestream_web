@@ -214,7 +214,7 @@ export function CaseStudyCard({ cs, expanded = false }) {
           <p className="mt-1">{cs.result}</p>
         </div>
       </div>
-      {expanded && <ProjectVideo url={cs.video} title={cs.client} />}
+      {expanded && <ProjectVideo url={cs.video} title={cs.client} embeddable={cs.videoEmbeddable !== false} />}
       {!expanded && youtubeId(cs.video) && (
         <Link
           to={`/projects#${cs.slug}`}

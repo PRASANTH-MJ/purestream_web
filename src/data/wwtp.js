@@ -4,7 +4,7 @@
 // or timelines that aren't in that file.
 
 export const CONTACT = {
-  youtube: '', // channel URL, e.g. https://www.youtube.com/@VineethWaterConsultant
+  youtube: 'https://www.youtube.com/@waterconsultantpalakkad',
   phone: '+91 70124 11523',
   phoneHref: 'tel:+917012411523',
   whatsapp: '917012411523',
@@ -97,19 +97,20 @@ export const CASE_STUDIES = [
     client: 'Merge Mechano',
     location: 'Varavoor, Thrissur',
     industry: 'Industrial powder coating & metal finishing',
-    capacity: 'Advanced Electrocoagulation (EC) System · 250 LPH',
+    capacity: '2 KLD Electrocoagulation ETP + 250 LPH RO',
     challenge:
       'Raw-material washing used caustic soda and oxalic acid. The projected influent TDS was 180 PPM, but on site it measured 850 PPM at pH 3.0. Standard chemical dosing would have created hazardous sludge and failed KSPCB norms.',
     solution: [
       'Electrocoagulation reactor that uses electric current instead of recurring chemical additives to neutralise acids and coagulate dissolved ions',
       'Automatic pH stabilisation from 3.0 to neutral',
       'Multi-stage sand + activated-carbon filtration',
-      'High-rejection RO sized for the 850 PPM spike',
+      'High-rejection 250 LPH RO sized for the 850 PPM spike',
+      'UV disinfection',
     ],
     result:
       'Chemical-free treatment cuts daily operating and sludge-handling costs. The treated water is recycled back into the washing process, and the factory stays within KSPCB norms with a footprint smaller than a traditional clarifier.',
     highlight: 'Pioneering chemical-free electrocoagulation in Kerala',
-    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
+    video: 'https://www.youtube.com/watch?v=Z6pgcfeMeuo',
   },
   {
     slug: 'pickle-factory',
@@ -118,16 +119,16 @@ export const CASE_STUDIES = [
     industry: 'Food processing & high-TDS effluent',
     capacity: 'Hybrid SBBR (SBR + MBBR)',
     challenge:
-      'Complex food-processing wastewater with shock organic loads and high salinity, which had to be treated without high power bills or a full-time operator.',
+      'Complex food-processing wastewater with shock organic loads, high salinity, oil and grease. Odour had led to complaints from neighbours and the municipality, and the fix had to avoid high power bills and a full-time operator.',
     solution: [
       'Hybrid SBBR: Sequencing Batch Reactor (SBR) combined with Moving Bed Biofilm Reactor (MBBR) biological stages',
       'Mud trap → oil & grease trap → settling → equalisation → reactor chamber',
       'Pressure sand filter → activated carbon filter → chlorine dosing',
       'Airlift pumping and semi-automatic operation',
     ],
-    result: 'The plant absorbs shock loads and salinity while running on just 160 W of power with minimal hands-on operation.',
+    result: 'The plant absorbs shock loads and salinity, resolving the odour problem while running on just 160 W of power with minimal hands-on operation.',
     highlight: 'Handles shock loads on just 160 W',
-    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
+    video: 'https://www.youtube.com/watch?v=np-ix6olKp8',
   },
   {
     slug: 'shaju-car-wash',
@@ -143,7 +144,7 @@ export const CASE_STUDIES = [
     ],
     result: 'Clean, treated water is reused at the wash centre.',
     highlight: 'Wash water treated for reuse',
-    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
+    video: '', // no video found on the channel yet
   },
   {
     slug: 'ramans-steam-wash',
@@ -160,7 +161,8 @@ export const CASE_STUDIES = [
     ],
     result: 'A complete, compliant treatment train at 2 KLD, the right size for a small commercial site.',
     highlight: 'Complete ETP at 2 KLD',
-    video: '', // paste YouTube URL (watch, youtu.be or shorts link)
+    video: 'https://www.youtube.com/watch?v=FEjsVuhgvwM',
+    videoEmbeddable: false, // owner disabled embedding on YouTube
   },
 ];
 
