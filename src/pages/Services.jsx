@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSeo } from '../lib/seo';
 import { FlaskConical, ClipboardCheck, Wrench, CalendarClock, ArrowRight, MapPin } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import QuoteBanner from '../components/QuoteBanner';
@@ -28,6 +29,7 @@ const OFFERINGS = [
 ];
 
 export default function Services() {
+  useSeo('/services');
   return (
     <>
       <PageHeader

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSeo } from '../lib/seo';
 import { Filter, RefreshCw, HeartHandshake, ShieldCheck, Wallet, PackageCheck, ArrowRight, Crown, Medal, Award } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 
@@ -83,6 +84,7 @@ const WHY_CARE = [
 ];
 
 export default function Maintenance() {
+  useSeo('/maintenance');
   return (
     <>
       <PageHeader

@@ -1,9 +1,11 @@
 import PageHeader from '../components/PageHeader';
+import { useSeo } from '../lib/seo';
 import QuoteBanner from '../components/QuoteBanner';
 import { CaseStudyCard, VideoTestimonials } from '../components/wwtp/Sections';
 import { CASE_STUDIES } from '../data/wwtp';
 
 export default function ProjectsPage() {
+  useSeo('/projects');
   return (
     <>
       <PageHeader

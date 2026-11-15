@@ -1,8 +1,10 @@
 import PageHeader from '../components/PageHeader';
+import { useSeo } from '../lib/seo';
 import QuoteBanner from '../components/QuoteBanner';
 import { SolutionsGrid, ProcessSection, HowWeWork, Faq, TechnologySection, WhyChoose } from '../components/wwtp/Sections';
 
 export default function SolutionsPage() {
+  useSeo('/solutions');
   return (
     <>
       <PageHeader

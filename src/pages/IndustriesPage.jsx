@@ -1,8 +1,10 @@
 import PageHeader from '../components/PageHeader';
+import { useSeo } from '../lib/seo';
 import QuoteBanner from '../components/QuoteBanner';
 import { IndustriesGrid, CaseStudies } from '../components/wwtp/Sections';
 
 export default function IndustriesPage() {
+  useSeo('/industries');
   return (
     <>
       <PageHeader

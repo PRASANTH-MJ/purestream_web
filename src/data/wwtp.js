@@ -9,8 +9,52 @@ export const CONTACT = {
   phoneHref: 'tel:+917012411523',
   whatsapp: '917012411523',
   email: 'svtpkd@gmail.com',
-  address: 'SV Trades, Town Bus Stand, Palakkad, Kerala – 678014',
+  address: 'SV Trades, T B Complex, Town Bus Stand, Sultanpet, Palakkad, Kerala 678014',
 };
+
+// Google Business Profile (listed as "SV Trades"). Keep the name, address and
+// phone on the site identical to this listing; that consistency drives local ranking.
+export const BUSINESS = {
+  legalName: 'SV Trades',
+  brand: 'Pure Stream',
+  street: 'T B Complex, Town Bus Stand, Sultanpet',
+  locality: 'Palakkad',
+  region: 'Kerala',
+  postalCode: '678014',
+  country: 'IN',
+  siteUrl: 'https://purestreamro.com',
+  // Stable Maps link built from the listing's CID.
+  mapsUrl: 'https://maps.google.com/?cid=13719021451705181059',
+  mapsEmbed: 'https://www.google.com/maps?cid=13719021451705181059&output=embed',
+  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=SV+Trades+T+B+Complex+Town+Bus+Stand+Palakkad+678014',
+  // Opens the listing (reviews, photos, hours) in Google Search.
+  profileUrl: 'https://g.co/kgs/BaSfaL',
+  // Shown as text only (not schema markup). Update occasionally from the listing.
+  rating: { stars: 4.9, count: 83, asOf: 'Nov 2026' },
+};
+
+// Districts and places with real Pure Stream work (from the business's own
+// YouTube channel). Used on /service-areas; do not add places without real jobs.
+export const SERVICE_AREAS = [
+  {
+    district: 'Palakkad',
+    note: 'Our home base at Palakkad Town Bus Stand. Site consultancy within 50 km is ₹4,900 (industrial) or ₹2,900 (domestic).',
+    wastewater: ['Pickle manufacturing facility: hybrid SBBR plant on 160 W'],
+    purifier: ['Iron remover with softener at Akathethara', 'Iron remover at Kadampazhipuram', 'Softener and iron remover at Mannarkkad', 'Vessel media refill at Kottayi', '100 LPH RO service at Kanjikkode', 'Water filters at Marutha Road PHC', 'Multimedia filter at Muttikulangara'],
+  },
+  {
+    district: 'Thrissur',
+    note: 'Industrial and commercial effluent projects across the district.',
+    wastewater: ['Merge Mechano, Varavoor: 2 KLD electrocoagulation ETP + 250 LPH RO', "Raman's Steam Wash, Chazhur: 2 KLD chemical ETP"],
+    purifier: [],
+  },
+  {
+    district: 'Ernakulam',
+    note: 'Chemical-free ETP demonstrations for industries in the Kochi region.',
+    wastewater: ['Chemical-free ETP demo in Ernakulam'],
+    purifier: [],
+  },
+];
 
 export const KEY_FACTS = [
   { value: '2–100', unit: 'KLD', label: 'Plant capacity range' },

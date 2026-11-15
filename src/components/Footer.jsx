@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, MapPin } from 'lucide-react';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from './SocialIcons';
 import PureStreamLogo from './PureStreamLogo';
 import { useQuoteModal } from '../context/QuoteModalContext';
-import { CONTACT } from '../data/wwtp';
+import { CONTACT, BUSINESS } from '../data/wwtp';
 
 const LINK_COLUMNS = [
   {
@@ -20,6 +20,7 @@ const LINK_COLUMNS = [
     title: 'Company',
     links: [
       { label: 'Industries', to: '/industries' },
+      { label: 'Service Areas', to: '/service-areas' },
       { label: 'Services & AMC', to: '/services' },
       { label: 'Water Purifiers', to: '/products' },
       { label: 'About Us', to: '/about-us' },
@@ -48,10 +49,16 @@ export default function Footer() {
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
               Industrial effluent and sewage treatment plants from 2 to 100 KLD. SBBR technology,
-              designed for PCB norms and water reuse. SV Trades, Town Bus Stand, Palakkad, Kerala – 678014.
+              designed for PCB norms and water reuse, plus RO water purifiers, iron removers and softeners in Palakkad.
             </p>
 
             <div className="mt-6 space-y-3 text-sm text-slate-400">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                <a href={BUSINESS.mapsUrl} target="_blank" rel="noreferrer" className="hover:text-white">
+                  {BUSINESS.legalName}, {BUSINESS.street}, {BUSINESS.locality}, {BUSINESS.region} {BUSINESS.postalCode}
+                </a>
+              </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-brand-400" />
                 <a href="tel:+917012411523" className="hover:text-white">

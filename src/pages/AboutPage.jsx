@@ -1,4 +1,5 @@
 import { Cpu, Wallet, Headphones, Users, Lightbulb, Award, Quote } from 'lucide-react';
+import { useSeo } from '../lib/seo';
 import PageHeader from '../components/PageHeader';
 import AboutUs from '../components/AboutUs';
 
@@ -60,6 +61,7 @@ const TESTIMONIALS = [
 ];
 
 export default function AboutPage() {
+  useSeo('/about-us');
   return (
     <>
       <PageHeader title="About Us" subtitle="Industrial waste water treatment, water recycling and purification from Palakkad, Kerala." />

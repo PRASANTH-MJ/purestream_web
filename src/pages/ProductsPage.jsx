@@ -1,7 +1,9 @@
 import PageHeader from '../components/PageHeader';
+import { useSeo } from '../lib/seo';
 import ProductGrid from '../components/ProductGrid';
 
 export default function ProductsPage() {
+  useSeo('/products');
   return (
     <>
       <PageHeader

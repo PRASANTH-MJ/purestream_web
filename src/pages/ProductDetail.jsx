@@ -1,4 +1,5 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
+import { useSeo } from '../lib/seo';
 import { ChevronRight, Phone, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { products, getProductBySlug, formatPrice } from '../data/products';
 import ProductCard from '../components/ProductCard';
@@ -15,6 +16,10 @@ const CATEGORY_STYLE = {
 export default function ProductDetail() {
   const { slug } = useParams();
   const product = getProductBySlug(slug);
+  useSeo(`/product/${slug}`, product ? {
+    title: `${product.name} in Palakkad | Price & Installation | Pure Stream`,
+    description: `${product.name}${product.category ? ` (${product.category})` : ''} from Pure Stream, SV Trades Palakkad. Supply, installation and AMC across Kerala. Call +91 70124 11523.`,
+  } : undefined);
 
   if (!product) {
     return <Navigate to="/products" replace />;
