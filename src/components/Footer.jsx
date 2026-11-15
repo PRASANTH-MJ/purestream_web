@@ -117,7 +117,17 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-sm text-slate-500 sm:flex-row">
           <p>© {new Date().getFullYear()} PureStream. All rights reserved.</p>
-          <p>Treat it right. Reuse it.</p>
+          <p>
+            Designed &amp; developed by{' '}
+            <a
+              href="https://data24zone.com"
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-slate-300 transition-colors hover:text-white"
+            >
+              Data24Zone
+            </a>
+          </p>
         </div>
       </div>
     </footer>
